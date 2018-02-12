@@ -1,206 +1,206 @@
 .notice {
-          background-color: #00CCCC;
-          color: #fff;
-          text-align: center;
-          margin: 0;
-          padding: 0;
-          display: block;
-          text-align: center;
-        }
+  background-color: #00CCCC;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  display: block;
+  text-align: center;
+}
 // 全体-----------------------------------------------
 .wrapper {
-            display: flex;
-            height: 100%;
+  display: flex;
+  height: 100%;
 // 左側----------------------------------------------
-            .left {
-                    width: 300px;
-                    float: left;
+  .left {
+    width: 300px;
+    float: left;
 
-                    .header-left {
-                                    background-color: black;
-                                    height: 15%;
-                                    width: 100%;
-                                    position: relative;
+    .header-left {
+      background-color: black;
+      height: 15%;
+      width: 100%;
+      position: relative;
 
-                                    .header__content {
-                                                        height:50px;
-                                                        width: 100%;
-                                                        line-height: 50px;
-                                                        margin: auto 0;
-                                                        position: absolute;
-                                                        top: 0;
-                                                        bottom: 0;
+      .header__content {
+        height:50px;
+        width: 100%;
+        line-height: 50px;
+        margin: auto 0;
+        position: absolute;
+        top: 0;
+        bottom: 0;
 
-                                                        .header__name {
-                                                                        font-size: 20px;
-                                                                        font-weight: bold;
-                                                                        color: #fff;
-                                                                        margin: 0 20px;
-                                                                        position: relative;
-                                                                        display: inline-block;
-                                                                      }
+.header__name {
+font-size: 20px;
+font-weight: bold;
+color: #fff;
+margin: 0 20px;
+position: relative;
+display: inline-block;
+}
 
-                                                        .user--new-group {
-                                                                            color: #ffffff;
-                                                                            display: inline-block;
-                                                                            margin-left: 90px;
-                                                                         }
+.user--new-group {
+color: #ffffff;
+display: inline-block;
+margin-left: 90px;
+}
 
-                                                        .user--edit-user {
-                                                                           color: #ffffff;
-                                                                           display: inline-block;
-                                                                         }
-                                                      }
-                                  }
-
-
-                    .groups {
-                              background-color: #2f3e51;
-                              height: calc(100vh - 20vh);
-                              padding: 20px;
-
-                              .groups__one-group {
-
-                                                  .groups__name {
-                                                                  color: #ffffff;
-                                                                  font-size: 15px;
-                                                                  margin: 0;
-                                                                  padding: 0;
-                                                                  box-sizing: border-box;
-                                                                  display: block;
-                                                                }
-
-                                                  .groups__message {
-                                                                      color: #ffffff;
-                                                                      font-size: 10px;
-                                                                      margin-top: 5px;
-                                                                      margin: 0;
-                                                                      padding: 0;
-                                                                      box-sizing: border-box;
-                                                                      display: block;
-                                                                      float: left;
-
-                                                                    }
+.user--edit-user {
+color: #ffffff;
+display: inline-block;
+}
+}
+}
 
 
-                                                  }
-                            }
-                  }
+.groups {
+background-color: #2f3e51;
+height: calc(100vh - 20vh);
+padding: 20px;
+
+.groups__one-group {
+
+.groups__name {
+color: #ffffff;
+font-size: 15px;
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+display: block;
+}
+
+.groups__message {
+color: #ffffff;
+font-size: 10px;
+margin-top: 5px;
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+display: block;
+float: left;
+
+}
+
+
+}
+}
+}
 
 // 右側------------------------------------------------
-            .right {
-                     width: calc( 100vw - 300px );
+.right {
+width: calc( 100vw - 300px );
 
 
-                      .header-right {
-                                      height: 15%;
-                                      border: 1px solid #eee;
+.header-right {
+height: 15%;
+border: 1px solid #eee;
 
-                                      .header__top-content {
-                                                              height: 80px;
-                                                              margin: 0 40px;
-                                                              position: relative;
+.header__top-content {
+height: 80px;
+margin: 0 40px;
+position: relative;
 
-                                                              .header__group-name {
-                                                                                    color: #333;
-                                                                                    font-size: 20px;
-                                                                                    margin: 35px 0 15px;
-                                                                                    position: absolute;
-                                                                                    left: 0;
-                                                                                  }
+.header__group-name {
+color: #333;
+font-size: 20px;
+margin: 35px 0 15px;
+position: absolute;
+left: 0;
+}
 
-                                                              .header__edit--button {
-                                                                                      color: #38AEF0;
-                                                                                      font-size: 15px;
-                                                                                      padding: 12.5px 20px;
-                                                                                      margin: 28px 20px 0;
-                                                                                      border: 1px solid;
-                                                                                      position: absolute;
-                                                                                      right: 0;
-                                                                                    }
-                                                            }
+.header__edit--button {
+color: #38AEF0;
+font-size: 15px;
+padding: 12.5px 20px;
+margin: 28px 20px 0;
+border: 1px solid;
+position: absolute;
+right: 0;
+}
+}
 
-                                        .header__bottom-content-members {
-                                                                          font-size: 12px;
-                                                                          margin: 0 40px;
-                                                                        }
+.header__bottom-content-members {
+font-size: 12px;
+margin: 0 40px;
+}
 
-                                    }
+}
 
-                     .messages {
-                                  height: calc( 100vh - 15% - 90px - 45px );
-                                  overflow-y: scroll;
-                                  padding-top: 26px;
-                                  padding-left: 40px;
+.messages {
+height: calc( 100vh - 15% - 90px - 45px );
+overflow-y: scroll;
+padding-top: 26px;
+padding-left: 40px;
 
-                                  .messages__one-message {
-                                                            padding: 20px 0;
+.messages__one-message {
+padding: 20px 0;
 
-                                  .messages__writer-name {
-                                                            color: #434A54;
-                                                            font-size: 16px;
-                                                            font-weight: bold;
-                                                            display: block;
-                                                            float: left;
-                                                         }
+.messages__writer-name {
+color: #434A54;
+font-size: 16px;
+font-weight: bold;
+display: block;
+float: left;
+}
 
-                                  .messages__written-time {
-                                                            color: #999;
-                                                            font-size: 12px;
-                                                            padding: 0 10px 10px;
-                                                            display: block;
-                                                            float: left;
-                                                          }
+.messages__written-time {
+color: #999;
+font-size: 12px;
+padding: 0 10px 10px;
+display: block;
+float: left;
+}
 
-                                  .messages__written-message{
-                                                              color: #434A54;
-                                                              display: block;
-                                                              clear: both;
-                                                            }
-                                                          }
-                                }
+.messages__written-message{
+color: #434A54;
+display: block;
+clear: both;
+}
+}
+}
 
-                    .form {
-                            height: 90px;
-                            width: 100%;
-                            background-color: #BBC3C7;
+.form {
+height: 90px;
+width: 100%;
+background-color: #BBC3C7;
 
-                            .form__content {
-                                              margin: 0 40px;
-                                              position: relative;
-
-
-                                              .message_body.message {
-                                                                      width: calc( 100% - 130px );
-                                                                      padding: 15px 10px;
-                                                                      margin: 20px 0;
-                                                                      border: none;
-                                                                      float: left;
-                                                                    }
+.form__content {
+margin: 0 40px;
+position: relative;
 
 
-                                              .fa-image {
-                                                          color: #999999;
-                                                          display: inline-block;
-                                                          position: absolute;
-                                                          right:125px;
-                                                          top: 40px;
-                                                        }
-                                           }
+.message_body.message {
+width: calc( 100% - 130px );
+padding: 15px 10px;
+margin: 20px 0;
+border: none;
+float: left;
+}
 
-                                              .form__submit--button {
-                                                                      height: 50px;
-                                                                      color: #fff;
-                                                                      width: 100px;
-                                                                      text-align: center;
-                                                                      background-color: #38AEF0;
-                                                                      position: absolute;
-                                                                      top: 20px;
-                                                                      right: 0;
-                                                                    }
-                          }
-            }
-         }
+
+.fa-image {
+color: #999999;
+display: inline-block;
+position: absolute;
+right:125px;
+top: 40px;
+}
+}
+
+.form__submit--button {
+height: 50px;
+color: #fff;
+width: 100px;
+text-align: center;
+background-color: #38AEF0;
+position: absolute;
+top: 20px;
+right: 0;
+}
+}
+}
+}
 
 
 
