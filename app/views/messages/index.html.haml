@@ -1,0 +1,45 @@
+%body
+.notice チャットグループが作成されました
+.wrapper
+  .left
+    .header-left
+      .header__content
+        %h3.header__name
+          name
+        %a.user--new-group{href: "/groups/new"}
+          %i.fa.fa-pencil-square-o.icon
+        %a.user--edit-user{href: "/groups/#[:id]/edit"}
+          %i.fa.fa-cog.icon
+    .groups
+      %div.groups__one-group
+        %h4.groups__name
+          チャットグループ１
+        %h5.groups__message
+          こんにちは！
+
+  .right
+    .header-right
+      %div.header__top-content
+        %h6.header__group-name
+          group name
+        %a.header__edit--button{href: "/groups/#[:id]/edit"}Edit
+      %h7.header__bottom-content-members
+        MEMBER
+
+    .messages
+      %div.messages__list
+        %div.messages__one-message
+          %h8.messages__writer-name
+            member name
+          %h7.messages__written-time
+            2016/12/12 12:12
+          %h9.messages__written-message
+            こんにちは！
+    .form
+      %div.form__content
+        %div.form__image{href: "/"}
+          %i.fa.fa-image.icon
+        %div.form__message
+          %input.message_body.message{:name => "message[body]", :placeholder => "type a message", :type => "text"}/
+        %div.form__submit
+          %input.form__submit--button{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
