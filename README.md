@@ -28,12 +28,14 @@ Things you may want to cover:
 # chat-space
  -->
 
-## membersテーブル
+## messagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|message|string|
+|image|string|
+|user_id|reference|null: false, foreign_key: true|
+|group_id|reference|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
@@ -43,38 +45,33 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false|
 |name|string|null: false|
 |email|string|null: false|
-|password|string||
 
 ### Association
-- has_many :groups
+- has_many :members
 - has_many :messages
-- belongs_to :groups
+- has_many :groups, through: :members
 
 ## groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false|
-|group_name|string|null: false, foreign_key: true|
-|chat_member|string|null: false, foreign_key: true|
+|group_name|string|null: false, unique: true|
 
 ### Association
-- has_many :users
-- belongs_to :user
+- has_many :members
+- has_many :messages
+- has_many :users, through: :members
 
-## messageテーブル
+## membersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false|
-|message|string|null: false, foreign_key: true|
-|image|string|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user_id|reference|null: false, foreign_key: true|
+|group_id|reference|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
 - belongs_to :user
+
