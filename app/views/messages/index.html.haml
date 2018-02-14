@@ -2,44 +2,44 @@
 .notice チャットグループが作成されました
 .wrapper
   .left
-    .header-left
-      .header__content
-        %h3.header__name
+    .layout-left-header
+      .user-header
+        %h3.user-header__name
           name
-        %a.user--new-group{href: "/groups/new"}
+        = link_to "_groups_new_path", class: "user-header__new-group" do
           %i.fa.fa-pencil-square-o.icon
-        %a.user--edit-user{href: "/groups/#[:id]/edit"}
+        = link_to "_users_edit_path", class: "user-header__edit-user" do
           %i.fa.fa-cog.icon
-    .groups
-      %div.groups__one-group
-        %h4.groups__name
-          チャットグループ１
-        %h5.groups__message
-          こんにちは！
+    .layout-left-body
+      .groups
+        .one-group
+          %h4.one-group__name
+            チャットグループ１
+          %h5.one-group__message
+            こんにちは！
 
   .right
-    .header-right
-      %div.header__top-content
-        %h6.header__group-name
-          group name
-        %a.header__edit--button{href: "/groups/#[:id]/edit"}Edit
-      %h7.header__bottom-content-members
-        MEMBER
+    .layout-right-header
+      .group-header
+        .group-header__top-contents
+          %h6.group-name
+            group name
+          = link_to "Edit", "_groups_edit_path", class: "edit-button"
+        .group-header__bottom-content-members
+          MEMBER
 
-    .messages
-      %div.messages__list
-        %div.messages__one-message
-          %h8.messages__writer-name
+    .layout-right-body
+      .messages-list
+        .one-message
+          %h8.one-message__writer-name
             member name
-          %h7.messages__written-time
+          %h7.one-message__written-time
             2016/12/12 12:12
-          %h9.messages__written-message
+          %h9.one-message__written-message
             こんにちは！
-    .form
-      %div.form__content
-        %div.form__image{href: "/"}
-          %i.fa.fa-image.icon
-        %div.form__message
-          %input.message_body.message{:name => "message[body]", :placeholder => "type a message", :type => "text"}/
-        %div.form__submit
-          %input.form__submit--button{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
+    .layout-right-footer
+      .form
+        %i.fa.fa-image.icon
+        %input.form__image{ name: "message[image]", type: "file" }
+        %input.form__type-message{:name => "message[body]", :placeholder => "type a message", :type => "text"}/
+        %input.form__submit-button{"data-disable-with" => "Send", name: "commit", type: "submit", value: "Send"}/
