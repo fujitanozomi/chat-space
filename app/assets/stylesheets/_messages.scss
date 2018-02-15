@@ -53,6 +53,8 @@
   padding: 20px;
 }
 .one-group {
+  box-sizing: border-box;
+  padding: 20px 0 40px;
 
   &__name {
     color: $leftTextColor;
