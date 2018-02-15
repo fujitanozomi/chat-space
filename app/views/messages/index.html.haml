@@ -6,7 +6,7 @@
       .user-header
         %h3.user-header__name
           = current_user.name
-        = link_to "_groups_new_path", class: "user-header__new-group" do
+        = link_to "/groups/new", class: "user-header__new-group" do
           %i.fa.fa-pencil-square-o.icon
         = link_to "/users/#{current_user.id}/edit", class: "user-header__edit-user" do
           %i.fa.fa-cog.icon
@@ -25,7 +25,7 @@
         .group-header__top-contents
           %h6.group-name
             group name
-          = link_to "Edit", "_groups_edit_path", class: "edit-button"
+          = link_to "Edit", "/groups/#{current_user.id}/edit", class: "edit-button"
         .group-header__bottom-content-members
           MEMBER
 
@@ -44,4 +44,4 @@
         %i.fa.fa-image.icon
         %input.form__image{ name: "message[image]", type: "file" }
         %input.form__type-message{:name => "message[body]", :placeholder => "type a message", :type => "text"}/
-        %input.form__submit-button{"data-disable-with" => "Send", name: "commit", type: "submit", value: "Send"}/
+        %input.form__submit-button{"data-disable-with": "Send", name: "commit", type: "submit", value: "Send"}/
