@@ -5,10 +5,10 @@
     .layout-left-header
       .user-header
         %h3.user-header__name
-          name
+          = current_user.name
         = link_to "_groups_new_path", class: "user-header__new-group" do
           %i.fa.fa-pencil-square-o.icon
-        = link_to "_users_edit_path", class: "user-header__edit-user" do
+        = link_to "edit_user_path", class: "user-header__edit-user" do
           %i.fa.fa-cog.icon
     .layout-left-body
       .groups
