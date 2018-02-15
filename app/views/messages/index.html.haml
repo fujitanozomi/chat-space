@@ -6,10 +6,11 @@
       .user-header
         %h3.user-header__name
           = current_user.name
-        = link_to "/groups/new", class: "user-header__new-group" do
+        = link_to edit_group_path(current_user), class: "user-header__new-group" do
           %i.fa.fa-pencil-square-o.icon
-        = link_to "/users/#{current_user.id}/edit", class: "user-header__edit-user" do
+        = link_to edit_user_path(current_user), class: "user-header__edit-user" do
           %i.fa.fa-cog.icon
+
 
     .layout-left-body
       .groups
