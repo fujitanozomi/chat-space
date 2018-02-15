@@ -8,8 +8,9 @@
           = current_user.name
         = link_to "_groups_new_path", class: "user-header__new-group" do
           %i.fa.fa-pencil-square-o.icon
-        = link_to "edit_user_path", class: "user-header__edit-user" do
+        = link_to "/users/#{current_user.id}/edit", class: "user-header__edit-user" do
           %i.fa.fa-cog.icon
+
     .layout-left-body
       .groups
         .one-group
@@ -37,6 +38,7 @@
             2016/12/12 12:12
           %h9.one-message__written-message
             こんにちは！
+
     .layout-right-footer
       .form
         %i.fa.fa-image.icon
