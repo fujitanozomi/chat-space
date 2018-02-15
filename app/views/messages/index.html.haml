@@ -13,11 +13,13 @@
 
     .layout-left-body
       .groups
-        .one-group
-          %h4.one-group__name
-            チャットグループ１
-          %h5.one-group__message
-            こんにちは！
+        -current_user.groups.each do |group|
+          = link_to group_messages_path(group) do
+            .one-group
+              .one-group__name
+                = group.name
+              .one-group__message
+                メッセージ
 
   .right
     .layout-right-header
@@ -43,5 +45,5 @@
       .form
         %i.fa.fa-image.icon
         %input.form__image{ name: "message[image]", type: "file" }
-        %input.form__type-message{:name => "message[body]", :placeholder => "type a message", :type => "text"}/
-        %input.form__submit-button{"data-disable-with": "Send", name: "commit", type: "submit", value: "Send"}/
+        %input.form__type-message{name: "message[body]", placeholder: "type a message", type: "text"}
+        %input.form__submit-button{"data-disable-with": "Send", name: "commit", type: "submit", value: "Send"}
