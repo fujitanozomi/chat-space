@@ -1,0 +1,33 @@
+%body
+.notice
+.wrapper
+  .left
+    = render partial: 'shared/sidebar', locals: {group: @group}
+  .right
+    .layout-right-header
+      .group-header
+        .group-header__top-contents
+          %h6.group-name
+            group name
+          = link_to "Edit", "/groups/#{current_user.id}/edit", class: "edit-button"
+        .group-header__bottom-content-members
+          MEMBER
+    .layout-right-body
+      .messages-list
+        - @messages.each do |message|
+          .one-message
+            .one-message__writer-name
+              = message.user.name
+            .one-message__written-time
+              = message.created_at
+            .one-message__written-message
+              = message.content
+    .layout-right-footer
+      .form
+        = form_for [@group, @message] do |f|
+          = f.text_field :content, class: 'form__type-message', placeholder: 'type a message'
+          .form__mask
+            = f.label :image, class: 'form__mask__image' do
+              = fa_icon 'picture-o', class: 'fa-image'
+              = f.file_field :image, class: 'form__image'
+          = f.submit 'Send', class: 'form__submit-button'
