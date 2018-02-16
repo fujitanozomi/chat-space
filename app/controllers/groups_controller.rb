@@ -1,6 +1,7 @@
 class GroupsController < ApplicationController
 
   def index
+    @message = Message.create
   end
 
   def new
@@ -35,7 +36,4 @@ class GroupsController < ApplicationController
     params.require(:group).permit(:name, { :user_ids => [] })
   end
 
-  def set_group
-    @group = Group.find(params[:id])
-  end
 end

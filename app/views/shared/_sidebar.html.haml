@@ -1,0 +1,20 @@
+.left
+  .layout-left-header
+    .user-header
+      %h3.user-header__name
+        = current_user.name
+      = link_to edit_group_path(current_user), class: "user-header__new-group" do
+        %i.fa.fa-pencil-square-o.icon
+      = link_to edit_user_path(current_user), class: "user-header__edit-user" do
+        %i.fa.fa-cog.icon
+
+  .layout-left-body
+    .groups
+      -current_user.groups.each do |group|
+        = link_to group_messages_path(group) do
+          .one-group
+            .one-group__name
+              = group.name
+            .one-group__message
+              メッセージ
+
