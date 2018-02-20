@@ -7,8 +7,8 @@
     .layout-right-header
       .group-header
         .group-header__top-contents
-          %h6.group-name
-            group name
+          .group-name
+          = @group.name
           = link_to "Edit", "/groups/#{current_user.id}/edit", class: "edit-button"
         .group-header__bottom-content-members
           MEMBER
@@ -22,10 +22,12 @@
               = message.created_at
             .one-message__written-message
               = message.content
+              %br
+              =image_tag message.image, size: "250x150", class: "one-message__image"
     .layout-right-footer
       .form
         = form_for [@group, @message] do |f|
-          = f.text_field :content, class: 'form__type-message', placeholder: 'type a message'
+          = f.text_field :content, class: 'form__type-message', placeholder: 'type a message', id: 'new_message'
           .form__mask
             = f.label :image, class: 'form__mask__image' do
               = fa_icon 'picture-o', class: 'fa-image'
