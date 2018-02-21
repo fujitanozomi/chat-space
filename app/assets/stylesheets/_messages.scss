@@ -19,14 +19,12 @@
   float: left;
   color: #ffffff
 }
-
 .user-header {
   background-color: black;
   height: $headerHeight;
   width: 100%;
   line-height: 100px;
   clear: both;
-
   &__name {
     font-size: 20px;
     font-weight: bold;
@@ -34,19 +32,16 @@
     position: relative;
     display: inline-block;
   }
-
   &__new-group {
     color: $leftTextColor;
     display: inline-block;
     margin-left: 90px;
   }
-
   &__edit-user {
     color: $leftTextColor;
     display: inline-block;
   }
 }
-
 .groups {
   background-color: #2f3e51;
   height: calc(100vh - 160px);
@@ -64,7 +59,6 @@
     box-sizing: border-box;
     display: block;
   }
-
   &__message {
     color: $leftTextColor;
     font-size: 10px;
@@ -80,20 +74,19 @@
 .right {
   width: calc( 100vw - 300px );
 }
-
 .group-header {
   height: $headerHeight;
   padding: 0 40px;
   position: relative;
   border: 1px solid #eee;
   box-sizing: border-box;
-
+  margin: 0;
   &__top-contents {
+    padding-top: 20px;
     color: #333;
     font-size: 20px;
     position: relative;
   }
-
   .group-name {
     color: #333333;
     font-size: 20px;
@@ -101,12 +94,10 @@
     display: block;
     float: left;
   }
-
   .edit-button {
     color: #38AEF0;
     font-size: 15px;
     padding: 12.5px 20px;
-    margin-top: 28px;
     padding: 0 20px;
     border: 1px solid;
     float: right;
@@ -115,27 +106,22 @@
     height: 40px;
     display: block;
   }
-
   &__bottom-content-members {
     font-size: 12px;
-    margin-top: 15px;
     color: #999999;
     display: flex;
     clear: both;
   }
 }
-
 .messages-list {
   height: calc( 100vh - 100px - 90px - 50px );
   overflow-y: scroll;
   padding-top: 26px;
   padding-left: 40px;
 }
-
 .one-message {
   padding: 20px 0;
   display: block;
-
   &__writer-name {
     color: #434A54;
     font-size: 16px;
@@ -143,7 +129,6 @@
     display: block;
     float: left;
   }
-
   &__written-time {
     color: #999;
     font-size: 12px;
@@ -151,15 +136,12 @@
     display: block;
     float: left;
   }
-
   &__written-message {
     color: #434A54;
     display: block;
     clear: both;
   }
 }
-
-
 .form {
   height: 90px;
   width: 100%;
@@ -167,7 +149,6 @@
   position: relative;
   padding: 20px 10px 20px 20px;
   box-sizing: border-box;
-
   .fa-image {
     color: #999999;
     display: inline-block;
@@ -175,7 +156,6 @@
     right:125px;
     top: 35px;
   }
-
   &__image {
     display: inline-block;
     position: absolute;
@@ -185,16 +165,14 @@
     width: 20px;
     opacity: 0;
   }
-
   &__type-message {
     width: calc( 100% - 100px );
     border: none;
     float: left;
     box-sizing: border-box;
     height: 50px;
-
+    padding: 10px;
   }
-
   &__submit-button {
     height: 50px;
     color: #fff;
