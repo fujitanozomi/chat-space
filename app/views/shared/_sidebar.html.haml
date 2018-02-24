@@ -3,7 +3,7 @@
     .user-header
       %h3.user-header__name
         = current_user.name
-      = link_to new_group_path(current_user), class: "user-header__new-group" do
+      = link_to new_group_path, class: "user-header__new-group" do
         %i.fa.fa-pencil-square-o.icon
       = link_to edit_user_path(current_user), class: "user-header__edit-user" do
         %i.fa.fa-cog.icon
@@ -17,4 +17,3 @@
               = group.name
             .one-group__message
               = group.show_last_message
-

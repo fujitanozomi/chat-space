@@ -11,7 +11,9 @@
           = @group.name
           = link_to "Edit", "/groups/#{current_user.id}/edit", class: "edit-button"
         .group-header__bottom-content-members
-          MEMBER
+          MEMBER：
+          - @group.group_users.each do |member|
+            = member.user.name
     .layout-right-body
       .messages-list
         - @messages.each do |message|
