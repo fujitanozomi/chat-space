@@ -17,7 +17,7 @@
     .layout-right-body
       .messages-list
         - @messages.each do |message|
-          .one-message
+          .one-message{"data-id": "#{message.id}"}
             .one-message__writer-name
               = message.user.name
             .one-message__written-time
