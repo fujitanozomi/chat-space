@@ -5,7 +5,7 @@ $(function(){
       }else{
       image = "";
     }
-    var html = `<div class="one-message">
+    var html = `<div class="one-message" data-id=${message.id}>
                   <div class="one-message__writer-name">
                     ${message.name}
                   </div>
@@ -20,9 +20,13 @@ $(function(){
                 </div>`
     return html;
   }
+  function moveToBottom(){
+    $('.messages-list').animate({ scrollTop: $('.messages-list')[0].scrollHeight });
+  };
   function pagereset(){
     $('.form__submit-button').prop('disabled', false);
   }
+// メッセージ非同期化
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
@@ -40,11 +44,31 @@ $(function(){
       $('.messages-list').append(html);
       $('.form__type-message').val('');
       $('.form__image').val('');
-      $('.messages-list').animate({ scrollTop: $('.messages-list')[0].scrollHeight });
+      moveToBottom();
       pagereset();
     })
     .fail(function(){
       alert('error');
-    })
+    });
   });
+// 自動更新
+  function autoUpdate(){
+    var message_id = $(".one-message").last().data("id");
+    $.ajax({
+      url: location.href,
+      type: "GET",
+      data: { id: message_id },
+      dataType: "json"
+    })
+    .done(function(data){
+      data.forEach(function(data){
+      var html = buildHTML(data);
+      $('.messages-list').append(html);
+      moveToBottom();
+      })
+    })
+  };
+  if(window.location.href.match(/\/groups\/\d+\/messages/)){
+    setInterval(autoUpdate, 5000);
+  };
 });
