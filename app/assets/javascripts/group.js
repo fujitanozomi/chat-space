@@ -67,4 +67,3 @@ var addUserList = $('#chat-group-users');
    });
   });
 });
-
